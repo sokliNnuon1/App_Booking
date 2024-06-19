@@ -263,7 +263,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                   right: 5,
                                   child: Container(
                                     alignment: Alignment.center,
-                                    width: 130,
+                                    width: 120,
                                     height: 30,
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
