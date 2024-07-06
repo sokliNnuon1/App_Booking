@@ -1,3 +1,4 @@
+import 'package:booking_room/Pages/detail_page.dart';
 import 'package:flutter/material.dart';
 import 'button_navigate.dart';
 
@@ -241,7 +242,7 @@ class _HomeScreenState extends State<HomeScreen> {
                     padding: EdgeInsets.symmetric(vertical: 3),
                     child: Container(
                       width: double.infinity,
-                      height: 250,
+                      height: 290,
                       decoration: buildBoxDecoration(),
                       child: Column(
                         children: [
@@ -275,11 +276,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                     ),
                                     child: Text(
                                       "12 nights available",
-                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+                                      style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 12),
                                     ),
                                   ),
-                                  ),
-
+                                ),
+                                // Positioned(
+                                //   top: 5,
+                                //   right: 5,
+                                //   child: ButtonTheme,
+                                // )
                               ],
                             ),
                           ),
@@ -287,29 +292,45 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: [
                               Padding(
                                 padding: const EdgeInsets.all(8.0),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                child: Row(
+                                  //crossAxisAlignment: CrossAxisAlignment.start, // Adjust as needed
+                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                   children: [
-                                    Text(
-                                      recentProperty['name'],
-                                      style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                                    ),
-                                    //SizedBox(height: 5),
-                                    Padding(
-                                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                                      child: RichText(
-                                        text: TextSpan(
-                                          text: '\$ ${recentProperty['price']}',
-                                          style: TextStyle(color: Colors.blue, fontSize: 14),
-                                          children: [
-                                            TextSpan(
-                                              text: " / night",
-                                              style: TextStyle(color: Colors.black, fontSize: 14),
-                                            ),
-                                          ],
+                                    Column(
+                                      crossAxisAlignment: CrossAxisAlignment.start,
+                                      children: [
+                                        Text(
+                                          recentProperty['name'],
+                                          style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                                         ),
-                                      ),
-                                    )
+                                        //SizedBox(height: 5),
+                                        Padding(
+                                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                                          child: RichText(
+                                            text: TextSpan(
+                                              text: '\$ ${recentProperty['price']}',
+                                              style: TextStyle(color: Colors.blue, fontSize: 14),
+                                              children: [
+                                                TextSpan(
+                                                  text: " / night",
+                                                  style: TextStyle(color: Colors.black, fontSize: 14),
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                        TextButton(
+                                          onPressed: () {
+                                            Navigator.of(context).pushReplacement(
+                                              MaterialPageRoute(
+                                                builder: (context) =>DetailPage(),
+                                              ),
+                                            );
+                                          },
+                                          child: Text('Details', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20, color: Color.fromARGB(255, 24, 105, 96)  ),), // Replace with your button text
+                                        ),
+                                      ],
+                                    ),
                                   ],
                                 ),
                               ),
