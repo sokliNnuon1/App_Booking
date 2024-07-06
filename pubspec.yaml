@@ -1,0 +1,36 @@
+name: booking_room
+description: A new Flutter project.
+
+publish_to: 'none' # Remove this line if you want to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=2.18.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  math_expressions: ^2.1.0
+  cupertino_icons: ^1.0.2
+  http: ^0.13.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_rating_bar: ^4.0.0
+  flutter_lints: ^3.0.0
+  pinput: ^2.2.31
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/lin.png
+    - assets/sea1.jpg
+    - assets/book1.jpg
+    - assets/book2.jpg
+    - assets/book3.jpg
+    - assets/book4.jpg
+    - assets/book5.jpg
+    - assets/google.png
